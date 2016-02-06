@@ -1,0 +1,22 @@
+{
+    "content_scripts": [
+        "contentScript.js"
+    ], 
+    "browser_button": {
+        "caption": "EXT", 
+        "tooltipText": "EXT", 
+        "icon": "icons/button.png"
+    }, 
+    "creator": "KA", 
+    "description": "Extension description", 
+    "framework_version": "1.8.0 3dc957b83b36", 
+    "developer_id": "YOUR_SAFARI_DEVELOPER_ID", 
+    "background_scripts": [
+        "main.js"
+    ], 
+    "homepage_url": "http://kangoextensions.com/", 
+    "version": "0.9.0", 
+    "framework_package_id": "dev", 
+    "id": "com.kangoextensions.ka", 
+    "name": "KA"
+}

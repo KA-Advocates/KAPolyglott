@@ -1,0 +1,21 @@
+{
+    "content_scripts": [
+        "contentScript.js"
+    ], 
+    "browser_button": {
+        "caption": "EXT", 
+        "tooltipText": "EXT", 
+        "icon": "icons/button.png"
+    }, 
+    "creator": "KA", 
+    "description": "Extension description", 
+    "framework_version": "1.8.0 3dc957b83b36", 
+    "background_scripts": [
+        "main.js"
+    ], 
+    "homepage_url": "http://kangoextensions.com/", 
+    "version": "0.9.0", 
+    "framework_package_id": "dev", 
+    "id": "{B62198C0-5DBE-4BC8-B9D5-1868EF6A1696}", 
+    "name": "KA"
+}
