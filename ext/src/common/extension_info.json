@@ -1,17 +1,17 @@
 {
-    "description": "Extension description", 
-    "creator": "KA", 
+    "name": "KAPolyglott",
+    "description": "KA Polyglott helps foreign language speakers to learn on Khan Academy by giving access to translations in other languages", 
+    "creator": "KADeutsch",
+	"version": "0.0.2",
     "background_scripts": [
       "main.js"
     ], 
-    "homepage_url": "http://kangoextensions.com/", 
-    "version": "0.9.0", 
+    "homepage_url": "https://chrome.google.com/webstore/detail/ka-polyglott/okdfmpojjligcllicjkpioaoaagmbgfi",  
     "browser_button": {
-        "caption": "EXT", 
+        "caption": "KAPolyglott", 
         "icon": "icons/button.png", 
-        "tooltipText": "EXT"
+        "tooltipText": "KA Polyglott - Khan Academy for language learners"
     }, 
-    "name": "KA",
     "content_scripts": [
       "contentScript.js"
     ]
