@@ -5,7 +5,11 @@ import speechHelper   from '../helpers/speechHelper';
 import contentHelper  from '../helpers/contentHelper';
 import popup          from '../ui/popup';
 
+/**
+ * translateBtn models a button to display a popup window to show translated strings
+ **/
 class translateBtn{
+
   constructor(elementPath){
     this.state        = 'HIDDEN';
     this.elementPath  = elementPath;
@@ -25,6 +29,9 @@ class translateBtn{
     this.bindAppearance();
   }
   
+  /**
+   * Inject HTML for the button
+   **/
   bindAppearance(){
     $(document).on("DOMNodeInserted",(evt) => {
       if($(this.elementPath).length && !$(`.${this.unique}`).length){
@@ -35,6 +42,9 @@ class translateBtn{
     });
   }
   
+  /**
+   * Bind click even for this button
+   **/
   bindClick(){
     $(`.${this.unique}`).unbind('click').click(()=>{
       this.onBtnClicked();
@@ -45,6 +55,10 @@ class translateBtn{
     return $.trim($(this.elementPath).text());
   }
   
+  /**
+   * Handler for click event on Buttons
+   * It loads translation data for clicked string and shows the popup window with translations of the clicked string
+   */
   onBtnClicked(){
     let content = this.getContent(); 
     this.popup.open('Please wait...');
@@ -63,7 +77,9 @@ class translateBtn{
   }
   
   
-  
+  /**
+   * Toggle visibility of button
+   **/
   updateState(state){
     if(state === 'HIDDEN')
       $(`.${this.unique}`).hide();
@@ -74,12 +90,16 @@ class translateBtn{
     return this;
   }
   
-    
-  
+  /**
+   * Hide button
+   **/
   remove(){
     this.updateState('HIDDEN');
   }
   
+  /**
+   * Show button
+   **/
   add(){
     this.updateState('VISIBLE');
   }

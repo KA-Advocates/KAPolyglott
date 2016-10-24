@@ -26,28 +26,30 @@ class KAPolyglott{
     this.popup      = new popup();
   }
     
-  isSupportedURL(){
-    return this.URLHelper.matchesPattren( CONFIG.supportedURLPattren ); 
+  isVideoURL(){
+    return this.URLHelper.matchesPattren( CONFIG.videoURLPattern ); 
   } 
   
   //When url is changed
   onURLChange(){
+	this.pageHelper.addCSS();  
     this.titleHintBtn.remove();
     this.videoDescriptionHintBtn.remove();
-    this.videoIcons.remove();
-      
-    if(this.isSupportedURL()){
-      this.pageHelper.addCSS();
-      this.titleHintBtn.add();
-      this.videoDescriptionHintBtn.add();
+    this.titleHintBtn.add();
+    this.videoDescriptionHintBtn.add();
+	
+	// Video icons are only displayed if we are on a video URL
+    this.videoIcons.remove();  
+    if(this.isVideoURL()){
       this.videoIcons.add();
+	  this.videoIcons.updateVideoData();
     }
   }
   
   //starts everything
   init(){
     this.URLHelper.subscribeToChange(()=>{
-      this.onURLChange 
+      this.onURLChange(); 
     });
     
     //Trigger it manually the first time

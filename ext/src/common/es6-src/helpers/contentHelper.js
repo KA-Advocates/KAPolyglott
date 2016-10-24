@@ -5,7 +5,7 @@ export class contentHelper{
   
   /**
    * Generate HTML for the Popup-Window displaying the translations
-   * data : Array with 
+   * data : Dictionary with Strings, Language
    **/
   traslationHTML(data){
     var html = [];
@@ -30,7 +30,9 @@ export class contentHelper{
     return html.join("\n");
   }
   
-  
+  /**
+   * Generate HTML-Icon vor all available languages
+   **/
   videoIconsHTML(data){
     var html = [];
     $.each(data,function(key, item){
@@ -41,6 +43,9 @@ export class contentHelper{
     return html.join("\n");
   }
 
+  /**
+   * Generate CSS to be injected into page for KA Polyglott
+   **/
   css(){
     return `.kaext_translations{
       width:70%;

@@ -1,19 +1,17 @@
 export class URLHelper{
 	
   constructor(){
-	console.log("URLHelper constructor");
     this._subscribersToChange = [];
     this._isChecking          = false;
     this._URLCheckinterval    = 100;
     this._resentLoction       = null;
   }
   
-  matchesPattren(pattren){
-    return Boolean(location.href.match(pattren));
+  matchesPattren(pattern){
+    return Boolean(location.href.match(pattern));
   }
   
   subscribeToChange(cb){
-	console.log("subscribeToChange");
     if(typeof cb !== 'function')
       return false;
     
@@ -23,7 +21,6 @@ export class URLHelper{
   }
   
   startCheckingForChanges(){
-	console.log("startCheckingForChanges");
     if(this._isChecking)
       return;
     

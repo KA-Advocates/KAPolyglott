@@ -33,8 +33,21 @@ class pageHelper{
     });
   }
   
+  /**
+   * extracts the slug (excercise or video ID) from URL
+   * The slug is normally the portion of the URL behind the last /
+   **/
   getVideoID(){
     return location.href.split('/').pop().replace('#','');
+  }
+  
+  /**
+   * Returns language code for the base language in userAgent
+   * it simply takes the hostname which on Khanacademy is the language code
+   **/
+  getBaseLanguage() {
+	var data = location.href.replace('https://','').split('.');
+	return data[0].replace('https://','');   
   }
   
   addCSS(){
