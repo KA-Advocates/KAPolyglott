@@ -49,13 +49,16 @@ export class contentHelper{
     var html = [];
 	
     $.each(CONFIG.enabledLanguages,function(key,lang){
-		var url = data[lang];
-		// the url has the format https://www.youtube.com/watch?v=6WwRwxkLuP0, extract the youtube_id
-		var youtube_id = url.split("=").pop();
-	
-		html.push('<div class="vid_icon clickable vid_flag_'+lang+'" data-vid="'+youtube_id+'" data-lang="'+lang+'">'+
-                  '<img src="'+kango.io.getResourceUrl('assets/images/flags/'+lang+'.png')+'">'+
-                '</div>');
+		
+		if ( data[lang] != undefined ) {
+			var url = data[lang];
+			// the url has the format https://www.youtube.com/watch?v=6WwRwxkLuP0, extract the youtube_id
+			var youtube_id = url.split("=").pop();
+		
+			html.push('<div class="vid_icon clickable vid_flag_'+lang+'" data-vid="'+youtube_id+'" data-lang="'+lang+'">'+
+					  '<img src="'+kango.io.getResourceUrl('assets/images/flags/'+lang+'.png')+'">'+
+					'</div>');
+		}
     })
     return html.join("\n");
   }

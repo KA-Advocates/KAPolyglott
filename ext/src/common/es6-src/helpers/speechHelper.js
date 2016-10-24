@@ -10,6 +10,7 @@ class speechHelper{
       en : 'UK English Female',
       ar : 'Arabic Male',
       de : 'Deutsch Female',
+	  fr : 'French Female',
     };
   }
   

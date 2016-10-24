@@ -6,7 +6,7 @@ const CONFIG = {
   //translateAPIURL     : 'https://www.kadeutsch.org/report/de/translate.php',
   //videoAPIURL         : 'https://www.kadeutsch.org/report/de/video.php',
   
-  enabledLanguages : [ "de", "en", "ar"],
+  enabledLanguages : [ "de", "en", "fr", "ar"],
   
   
 };
