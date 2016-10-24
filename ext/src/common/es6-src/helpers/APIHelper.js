@@ -1,7 +1,10 @@
 import CONFIG from '../config';
+import pageHelper     from '../helpers/pageHelper';
 
 export class APIHelper{
-  constructor(){}
+  constructor(){
+	      this.pageHelper     = new pageHelper();
+  }
   
   /**
    * Load the Translations for a specific String
@@ -11,7 +14,7 @@ export class APIHelper{
     var details = {
       method      : 'GET',
       url         : CONFIG.translateAPIURL,
-      params      : {'lang': 'de', 's': title },
+      params      : {'lang': this.pageHelper.getBaseLanguage(), 's': encodeURI(title) },
     };
 
     kango.xhr.send(details, (data) => {

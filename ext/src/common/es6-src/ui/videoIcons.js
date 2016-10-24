@@ -45,7 +45,7 @@ class videoIcons{
           $('#ka-ext-vid-icon').append(this.contentHelper.videoIconsHTML(data));
 		  
 		  //add active class to flag of base language
-		  var selector = '#ka-ext-vid-icon [data-lang="de"]';
+		  var selector = '#ka-ext-vid-icon [data-lang="'+this.pageHelper.getBaseLanguage()+'"]';
 		  $(selector).addClass('active');
 		  // bind Icons to new clickhandler
           this.bindVideoIcons(data);           

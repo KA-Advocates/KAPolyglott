@@ -52,7 +52,8 @@ class translateBtn{
   }
   
   getContent(){
-    return $.trim($(this.elementPath).text());
+    return $(this.elementPath).text();
+	//return $.trim($(this.elementPath).text());
   }
   
   /**
