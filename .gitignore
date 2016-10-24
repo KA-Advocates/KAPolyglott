@@ -1,3 +1,6 @@
 node_modules/
 ext/output/
 *.py[cod]
+
+ext/src/common/contentScript.js
+ext/src/common/contentScriptWebpackBuild.js
