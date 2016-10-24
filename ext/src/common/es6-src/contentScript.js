@@ -11,7 +11,7 @@ import popup          from './ui/popup';
 
 
 
-class ka{
+class KAPolyglott{
   constructor(){
     this.pageHelper = new pageHelper();
     this.URLHelper  = new URLHelper();
@@ -59,8 +59,7 @@ class ka{
 
 
 //start the process
-(new ka()).init();
-
+(new KAPolyglott()).init();
 
 
 
