@@ -3,6 +3,10 @@ import CONFIG from '../config';
 export class APIHelper{
   constructor(){}
   
+  /**
+   * Load the Translations for a specific String
+   *
+   **/
   getTranslation(title, success, failure){
     var details = {
       method      : 'GET',
@@ -10,6 +14,7 @@ export class APIHelper{
       params      : {'lang': 'de', 's': title },
     };
 
+	console.log( "loading " + CONFIG.translateAPIURL );
     kango.xhr.send(details, (data) => {
       if (data.status == 200 && data.response != null){
         let dataParsed = {};
@@ -26,6 +31,9 @@ export class APIHelper{
     });
   }
   
+  /**
+   * Load the Videodata from Server for a specific VideoID
+   **/
   getVideoData(ID, success, failure){
     
     var details = {

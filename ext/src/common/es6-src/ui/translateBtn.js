@@ -20,11 +20,7 @@ class translateBtn{
     this.popup          = new popup();
     
     
-    this.template = `<a href="#" id="ka-ext-icon" class='${this.unique}'>
-                      <img  width="25px" 
-                            valign="middle" 
-                            src="${kango.io.getResourceUrl('assets/images/tips.png')}" >
-                    </a>`;
+    this.template = `<a href="#" id="ka-ext-icon" class='${this.unique}'><img  width="25px" valign="middle" src="${kango.io.getResourceUrl('assets/images/tips.png')}" ></a>`;
                     
     this.bindAppearance();
   }

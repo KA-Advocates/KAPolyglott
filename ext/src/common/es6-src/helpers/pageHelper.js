@@ -44,11 +44,11 @@ class pageHelper{
   
   
   titleElementPath(){
-    return '.task-title>span';
+    return '.title_k2aiyo>span';
   }
   
   videoDescriptionElementPath(){
-    return '.video-misc-container__description';
+    return 'div.description_anfflz>span:first-of-type';
   }
   
   

@@ -3,6 +3,10 @@ import $ from '../vendor/jQuery';
 export class contentHelper{
   constructor(){}
   
+  /**
+   * Generate HTML for the Popup-Window displaying the translations
+   * data : Array with 
+   **/
   traslationHTML(data){
     var html = [];
     html.push('<div class="kaext_translations">');
