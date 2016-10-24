@@ -1,5 +1,7 @@
 export class URLHelper{
+	
   constructor(){
+	console.log("URLHelper constructor");
     this._subscribersToChange = [];
     this._isChecking          = false;
     this._URLCheckinterval    = 100;
@@ -11,6 +13,7 @@ export class URLHelper{
   }
   
   subscribeToChange(cb){
+	console.log("subscribeToChange");
     if(typeof cb !== 'function')
       return false;
     
@@ -20,19 +23,21 @@ export class URLHelper{
   }
   
   startCheckingForChanges(){
+	console.log("startCheckingForChanges");
     if(this._isChecking)
       return;
     
     this._resentLoction = location.href;
     
-    setInterval(function(){
-      if(location.href !== this._resentLoction){
+	// use .bind(this) to make this variable point to URLHelper instead of Window object
+    setInterval((function(){
+      if(location.href !== this._resentLoction){  
         this._resentLoction = location.href;
         this._subscribersToChange.forEach((callBack) => {
           callBack(this._resentLoction);
         });
       }
-    },this._URLCheckinterval);
+    }).bind(this),this._URLCheckinterval);
     
     this._isChecking = true;
   }
