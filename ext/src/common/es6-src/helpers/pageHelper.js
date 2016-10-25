@@ -55,16 +55,6 @@ class pageHelper{
     $('head').append(`<style id="ka-css">${this.contentHelper.css()}</style>`);
   }
   
-  
-  titleElementPath(){
-    return '.title_k2aiyo>span';
-  }
-  
-  videoDescriptionElementPath(){
-    return 'div.description_anfflz>span:first-of-type';
-  }
-  
-  
 }
 
 
