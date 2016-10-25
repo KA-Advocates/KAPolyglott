@@ -19,7 +19,9 @@ class popup{
       "<div id='kaext_popup'>",
         "<div class='kaext_popup_wrapper'>",
           "<div class='text-right'><button class='kaext_popup_close'>X</button></div>",
+		  "<div><center><h2>KA Polyglott</h2></center>",
           "<div class='kaext_popup_content'></div>",
+		  "</div>",
         "</div>",
     "</div>"].join("\n"));
   }

@@ -18,9 +18,12 @@ class KAPolyglott{
     this.APIHelper  = new APIHelper();
     this.contentHelper  = new contentHelper();
     this.speechHelper  = new speechHelper();
-    
-    this.titleHintBtn             = new translateBtn(this.pageHelper.titleElementPath());
-    this.videoDescriptionHintBtn  = new translateBtn(this.pageHelper.videoDescriptionElementPath());
+	
+	//create TranslateButtons for all configured selectors
+	this.translateButtons = [];
+	CONFIG.stringElementSelectors.forEach((function(item, index){
+		this.translateButtons.push(new translateBtn(item));
+	}).bind(this));
                        
     this.videoIcons = new videoIcons();
     this.popup      = new popup();
@@ -32,11 +35,12 @@ class KAPolyglott{
   
   //When url is changed
   onURLChange(){
-	this.pageHelper.addCSS();  
-    this.titleHintBtn.remove();
-    this.videoDescriptionHintBtn.remove();
-    this.titleHintBtn.add();
-    this.videoDescriptionHintBtn.add();
+	this.pageHelper.addCSS();
+
+	this.translateButtons.forEach(function(i,k) {
+		i.remove();
+		i.add();
+	});
 	
 	// Video icons are only displayed if we are on a video URL
     this.videoIcons.remove();  

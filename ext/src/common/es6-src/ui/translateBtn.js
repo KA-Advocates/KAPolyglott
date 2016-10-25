@@ -66,7 +66,7 @@ class translateBtn{
     this.APIHelper.getTranslation(
       content,
       (data) => {
-        this.popup.open(this.contentHelper.traslationHTML(data));
+        this.popup.open(this.contentHelper.translationHTML(data,content, this.pageHelper.getBaseLanguage()));
         this.pageHelper.bindSpeakIcons((text, lang) => {
           this.speechHelper.speak(text, lang);
         });

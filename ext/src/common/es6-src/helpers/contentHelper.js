@@ -23,7 +23,7 @@ export class contentHelper{
    * Generate HTML for the Popup-Window displaying the translations
    * data : Dictionary with Strings, Language
    **/
-  traslationHTML(data){
+  translationHTML(data,origString,origLang){
     var html = [];
     html.push('<div class="kaext_translations">');
 	var self = this;
@@ -35,8 +35,8 @@ export class contentHelper{
 	});
 	
 	if (html.length == 1 ) {
-	  
-	  html.push("no translations for this string found");
+	  html.push( self.addTranslationItem(html, origLang, origString));
+	  html.push("no translations for this string available");
 	}	
     html.push('</div>');
     return html.join("\n");
