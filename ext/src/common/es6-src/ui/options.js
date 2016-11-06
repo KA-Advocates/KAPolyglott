@@ -32,11 +32,15 @@ function save() {
 
 KangoAPI.onReady(function() {
 
+	$('#select').multiSelect({
+		sortable: true,
+		keepOrder: true
+	});
 	//Load Available languages
 	getLanguages(
 		(data) => {
 			$.each(data,function(key, lang) {
-				debugger;
+				
 				//$('#select-from').append("<option value='"+el+"'>"+el+"</option>");
 				$('#select').multiSelect('addOption', { value: key, text: lang['nativeName'] });
 			});
@@ -54,6 +58,7 @@ KangoAPI.onReady(function() {
 	);
 
 	$('#select').multiSelect({
+		sortable: true,
 		afterSelect: function(values){
 			save();
 		},
@@ -65,6 +70,7 @@ KangoAPI.onReady(function() {
 	
 
     $('#close').click(function(event) {
+		save();
         KangoAPI.closeWindow()
     });	
 	
