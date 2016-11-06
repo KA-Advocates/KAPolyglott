@@ -14,5 +14,6 @@
     }, 
     "content_scripts": [
       "contentScript.js"
-    ]
+    ],
+	"options_page": "options.html"
 }

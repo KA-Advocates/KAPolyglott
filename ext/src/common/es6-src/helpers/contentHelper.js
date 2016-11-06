@@ -27,7 +27,9 @@ export class contentHelper{
     var html = [];
     html.push('<div class="kaext_translations">');
 	var self = this;
-	$.each(CONFIG.enabledLanguages,function(key,lang){
+	
+	var selectedLanguages = kango.storage.getItem("selectedLanguages"); 
+	$.each(selectedLanguages,function(key,lang){
 
 		if ( data[lang] != undefined ) {
 		  self.addTranslationItem(html, lang, data[lang]);
@@ -47,19 +49,23 @@ export class contentHelper{
    **/
   videoIconsHTML(data){
     var html = [];
-	
-    $.each(CONFIG.enabledLanguages,function(key,lang){
-		
-		if ( data[lang] != undefined ) {
-			var url = data[lang];
-			// the url has the format https://www.youtube.com/watch?v=6WwRwxkLuP0, extract the youtube_id
-			var youtube_id = url.split("=").pop();
-		
-			html.push('<div class="vid_icon clickable vid_flag_'+lang+'" data-vid="'+youtube_id+'" data-lang="'+lang+'">'+
-					  '<img src="'+kango.io.getResourceUrl('assets/images/flags/'+lang+'.png')+'">'+
-					'</div>');
-		}
-    })
+
+	console.log("videoIconsHTML");
+    //Show Language Icon for each language
+	var languages = kango.storage.getItem("selectedLanguages"); 
+	console.log("loaded : " + languages);
+    $.each(languages,function(key,lang){
+			if ( data[lang] != undefined ) {
+				var url = data[lang];
+				// the url has the format https://www.youtube.com/watch?v=6WwRwxkLuP0, extract the youtube_id
+				var youtube_id = url.split("=").pop();
+			
+				html.push('<div class="vid_icon clickable vid_flag_'+lang+'" data-vid="'+youtube_id+'" data-lang="'+lang+'">'+
+						  '<img src="'+kango.io.getResourceUrl('assets/images/flags/'+lang+'.png')+'">'+
+						'</div>');
+			}
+	});	
+
     return html.join("\n");
   }
 

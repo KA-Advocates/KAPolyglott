@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script type="text/javascript" src="kango-ui/kango_api.js"></script>
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script src="jquery.multi-select.js" type="text/javascript"></script>
+    <script type="text/javascript" src="es6-src/ui/options.js"></script>
+	<link href="es6-src/styles/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+
+	
+	<style>
+	
+	input {
+	display: block;
+	font-weight: 800;
+	letter-spacing: 1px;
+	}
+
+	fieldset {
+		width:500px;
+	}
+	</style>
+</head>
+<body>
+<h1>Polyglott Khan Academy</h1>
+<form>
+  <fieldset>
+    <table>
+	<tr>
+	<td>Available / Selected Languages</td>
+	</tr><tr><td>
+		<select name="myselect[]" id="select"  multiple="multiple" size="5">
+		</select>
+	</td></tr>
+	</table>
+  <br/>
+  <input id="close" type="submit" value="Close page"/>
+
+  </fieldset>
+</form>
+</body>
+</html>
