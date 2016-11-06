@@ -25,7 +25,7 @@ function getLanguages(success, failure){
 function save() {
 	var selected = []; 
 	$('#select :selected').each(function(i, option){ 
-		selected[i] = $(option).text(); 
+		selected[i] = $(option).val(); 
 	});
 	kango.invokeAsync('kango.storage.setItem', "selectedLanguages", selected);
 }
@@ -35,9 +35,10 @@ KangoAPI.onReady(function() {
 	//Load Available languages
 	getLanguages(
 		(data) => {
-			data.forEach(function(el, index, array) {
+			$.each(data,function(key, lang) {
+				debugger;
 				//$('#select-from').append("<option value='"+el+"'>"+el+"</option>");
-				$('#select').multiSelect('addOption', { value: el, text: el });
+				$('#select').multiSelect('addOption', { value: key, text: lang['nativeName'] });
 			});
 			
 			//Select Languages

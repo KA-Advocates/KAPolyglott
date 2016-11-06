@@ -6,16 +6,17 @@ class speechHelper{
     this.responsiveVoice = new ResponsiveVoice();
     this.responsiveVoice.init();
     
+	// Not used Speeches
+	//
 	// UK English Female
 	// UK English Male
 	// US English Female
     // Australian Female
-    //Spanish Latin American Female
-    //Welsh Male
-	//ca : 'Latin Female
-	//	  ca : 'Moldavian Male
-	//  ca : 'Montenegrin Male
-	//ca : 'Serbo-Croatian Male
+    // Spanish Latin American Female
+    //
+	// Moldavian Male
+	// Montenegrin Male
+	// Serbo-Croatian Male
 	
     this.voiceMaps = {
       en : 'UK English Female',
@@ -30,10 +31,10 @@ class speechHelper{
 	  ru : 'Russian Female',
 	  nl : 'Dutch Female',
 	  sw : 'Swedish Female',
-	  no : 'Norwegian Female',
+	  nb : 'Norwegian Female',
 	  jp : 'Japanese Female',
 	  kr : 'Korean Female',
-	  cn : 'Chinese Female',
+	  zh : 'Chinese Female',
 	  hi : 'Hindi Female',
 	  sr : 'Serbian Male',
 	  hr : 'Croatian Male',
@@ -47,7 +48,7 @@ class speechHelper{
 	  cz : 'Czech Female',
 	  da : 'Danish Female',
 	  eo : 'Esperanto Male',
-	  ha : 'Hatian Creole Female',
+	  ht : 'Hatian Creole Female',
 	  is : 'Icelandic Male',
 	  id : 'Indonesian Female',
 	  lv : 'Latvian Male',
@@ -56,6 +57,8 @@ class speechHelper{
 	  'pt-BR' : 'Brazilian Portuguese Female',
 	  pt : 'Portuguese Female',
 	  sk : 'Slovak Female',
+	  cy : 'Welsh Male',
+	  la : 'Latin Female',
 
     };
   }
