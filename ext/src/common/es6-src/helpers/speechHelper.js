@@ -65,7 +65,7 @@ class speechHelper{
   
   
   speak(text, lang){
-    console.log(text, lang); 
+    console.log(lang, text, this.voiceMaps[lang]); 
     this.responsiveVoice.speak(text,this.voiceMaps[lang]);
   }
   
